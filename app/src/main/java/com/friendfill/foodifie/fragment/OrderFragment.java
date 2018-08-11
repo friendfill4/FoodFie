@@ -11,9 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.friendfill.foodifie.R;
 import com.friendfill.foodifie.adapter.OrderItemCategoryAdapter;
+import com.friendfill.foodifie.listners.SimpleGestureFilter;
+import com.friendfill.foodifie.listners.SimpleGestureFilter.SimpleGestureListener;
 import com.friendfill.foodifie.model.Category;
 import com.friendfill.foodifie.model.Item;
 import com.friendfill.foodifie.model.Varient;
@@ -23,7 +26,6 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -32,7 +34,7 @@ import butterknife.Unbinder;
  * Use the {@link OrderFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OrderFragment extends Fragment {
+public class OrderFragment extends Fragment implements SimpleGestureListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -85,6 +87,7 @@ public class OrderFragment extends Fragment {
     OrderItemCategoryAdapter categoryAdapter;
     ArrayList<Item> items;
     ArrayList<Category> categories;
+    private SimpleGestureFilter detector;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -170,6 +173,9 @@ public class OrderFragment extends Fragment {
         categories.add(new Category(2, "Staples", "", items));
         categories.add(new Category(3, "Other", "", items));
         SetUpView();
+        detector = new SimpleGestureFilter(getActivity(), this);
+
+
         return v;
     }
 
@@ -178,6 +184,7 @@ public class OrderFragment extends Fragment {
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, LinearLayout.VERTICAL);
         rvOrderItems.setLayoutManager(staggeredGridLayoutManager);
         rvOrderItems.setAdapter(categoryAdapter);
+        // Detect touched area
 
     }
 
@@ -209,6 +216,33 @@ public class OrderFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onSwipe(int direction) {
+        String str = "";
+        switch (direction) {
+
+            case SimpleGestureFilter.SWIPE_RIGHT:
+                str = "Swipe Right";
+                break;
+            case SimpleGestureFilter.SWIPE_LEFT:
+                str = "Swipe Left";
+                break;
+            case SimpleGestureFilter.SWIPE_DOWN:
+                str = "Swipe Down";
+                break;
+            case SimpleGestureFilter.SWIPE_UP:
+                str = "Swipe Up";
+                break;
+
+        }
+        Toast.makeText(getActivity(), "" + str, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDoubleTap() {
+
     }
 
     /**
