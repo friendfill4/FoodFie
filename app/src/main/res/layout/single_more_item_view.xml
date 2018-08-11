@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/pad_xs"
+    tools:context="com.friendfill.foodifie.fragment.HomePagerItemFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_item_height"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="300"
+        fresco:failureImage="@drawable/sample"
+        fresco:placeholderImage="@drawable/staff"
+        fresco:placeholderImageScaleType="centerCrop"></com.facebook.drawee.view.SimpleDraweeView>
+
+</FrameLayout>

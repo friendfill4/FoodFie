@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/pad_md">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_imageview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="300"
+        fresco:failureImage="@drawable/sample"
+        fresco:placeholderImage="@drawable/sample"
+        fresco:placeholderImageScaleType="centerCrop"></com.facebook.drawee.view.SimpleDraweeView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mar_sm"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Item 1"
+            android:textSize="@dimen/text_xlg" />
+
+        <TextView
+            android:id="@+id/textview_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rs.103"
+            android:textSize="@dimen/text_lg" />
+    </LinearLayout>
+</LinearLayout>

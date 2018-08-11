@@ -1,0 +1,108 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="6dp"
+    android:paddingLeft="@dimen/pad_xs"
+    android:paddingRight="@dimen/pad_xs"
+    android:paddingTop="6dp"
+    tools:context="com.friendfill.foodifie.fragment.HomePagerItemFragment">
+
+    <LinearLayout
+
+        android:id="@+id/viewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/color_offline"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/mar_lg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:src="@drawable/ic_action_phone_start" />
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/viewBackground_Right"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/color_online"
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/mar_lg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:src="@drawable/ic_email" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewForeground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/staff_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                fresco:actualImageResource="@drawable/sample"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@drawable/sample"
+                fresco:roundAsCircle="true" />
+
+            <TextView
+                android:id="@+id/online_status"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/pad_xs"
+                android:layout_marginTop="@dimen/pad_xs"
+                android:background="@drawable/online_circle" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/pad_sm">
+
+            <TextView
+                android:id="@+id/staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Jay Acharya"
+                android:textColor="@color/black_de"
+                android:textSize="@dimen/text_xlg" />
+
+            <TextView
+                android:id="@+id/staff_designation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Owner" />
+
+            <TextView
+                android:id="@+id/staff_shift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Owner"
+                android:textSize="@dimen/text_sm" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="bottom_navigation_view_height">56dp</dimen>
+    <dimen name="actionbar_height">56dp</dimen>
+    <dimen name="home_fragment_pager_height">300dp</dimen>
+    <dimen name="menu_item_height">190dp</dimen>
+
+
+    <dimen name="text_xs">5dp</dimen>
+    <dimen name="text_sm">10dp</dimen>
+    <dimen name="text_md">15dp</dimen>
+    <dimen name="text_lg">20dp</dimen>
+    <dimen name="text_xlg">25dp</dimen>
+    <dimen name="text_xxlg">30dp</dimen>
+    <dimen name="text_xxxlg">40dp</dimen>
+
+
+    <dimen name="pad_xs">5dp</dimen>
+    <dimen name="pad_sm">10dp</dimen>
+    <dimen name="pad_md">15dp</dimen>
+    <dimen name="pad_lg">20dp</dimen>
+    <dimen name="pad_xlg">25dp</dimen>
+    <dimen name="pad_xxlg">30dp</dimen>
+
+    <dimen name="mar_xs">5dp</dimen>
+    <dimen name="mar_sm">10dp</dimen>
+    <dimen name="mar_md">15dp</dimen>
+    <dimen name="mar_lg">20dp</dimen>
+    <dimen name="mar_xlg">25dp</dimen>
+    <dimen name="mar_xxlg">30dp</dimen>
+    <dimen name="app_bar_height">250dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

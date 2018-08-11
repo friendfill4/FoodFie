@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFF</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_occupied">#b3600700</color>
+    <color name="color_available">#b9034906</color>
+    <color name="color_offline">#b3ff2211</color>
+    <color name="color_online">#b907de10</color>
+
+    <color name="white">#FFF</color>
+    <color name="gray">#f2f0f0</color>
+    <color name="primary_gradient_start_color">#7e40d3</color>
+    <color name="primary_gradient_end_color">#d23cf5</color>
+    <color name="receipt_parent_background">#394154</color>
+</resources>

@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/table_container"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:padding="@dimen/pad_md"
+    tools:context="com.friendfill.foodifie.fragment.HomePagerItemFragment">
+    <!-- TODO: Update blank fragment layout -->
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/table_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        fresco:actualImageScaleType="center"
+        fresco:fadeDuration="300"
+        fresco:failureImage="@drawable/sample"
+        fresco:placeholderImage="@drawable/sample"
+        fresco:placeholderImageScaleType="centerInside" />
+
+    <LinearLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="#99000000"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:padding="@dimen/pad_md">
+
+        <TextView
+            android:id="@+id/table_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Subtitle"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_lg" />
+
+        <TextView
+            android:id="@+id/table_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:text="Title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_xxlg" />
+
+        <TextView
+            android:id="@+id/table_status"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@color/black_de"
+            android:padding="@dimen/mar_xs"
+            android:text="Engaged"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_md" />
+    </LinearLayout>
+
+</FrameLayout>

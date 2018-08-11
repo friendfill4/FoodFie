@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinateContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.friendfill.foodifie.BillDetailActivity">
+
+    <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_de"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/black_de"
+            app:expandedTitleMarginEnd="@dimen/activity_horizontal_margin"
+            app:expandedTitleMarginStart="@dimen/activity_horizontal_margin"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:orientation="vertical"
+                android:padding="@dimen/pad_md"
+                app:layout_scrollFlags="scroll">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bill_no"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_textview"
+                        android:gravity="center"
+                        android:text="#1"
+                        android:textColor="@color/black_de"
+                        android:textSize="@dimen/text_xxlg" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/pad_md">
+
+                        <TextView
+                            android:id="@+id/bill_grand_total"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rs.1500"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_xxxlg"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/bill_customer_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Jay Acharya"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_lg" />
+
+                        <TextView
+                            android:id="@+id/bill_customer_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="acharyajay007@gmail.com"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_md" />
+
+                        <TextView
+                            android:id="@+id/bill_customer_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="9978078494"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_md" />
+
+                        <TextView
+                            android:id="@+id/bill_customer_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="402,Craftbox Tech.\nRajkot-360005"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_md" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.friendfill.foodifie.BillDetailActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pad_md"
+            android:background="@drawable/shadow"
+            android:orientation="vertical"
+            android:padding="@dimen/pad_md">
+
+            <LinearLayout
+                android:id="@+id/bill_pending_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/search_item_edittext_searchbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_edittext"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="Search Item"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/pad_sm"
+                    android:textSize="@dimen/text_lg"
+
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_pending_bill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bill_completed_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_xlg" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs"
+                    android:text="@string/app_address"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_sm" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_billitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/mar_md"
+                    android:background="@color/black_de"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs"
+                    android:paddingLeft="@dimen/pad_xs"
+                    android:paddingTop="@dimen/pad_xs">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subtotal" />
+
+                    <TextView
+                        android:id="@+id/bill_subtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.1500" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs"
+                    android:paddingLeft="@dimen/pad_xs"
+                    android:paddingTop="@dimen/pad_xs">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Discount" />
+
+                    <TextView
+                        android:id="@+id/bill_discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.1500" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs"
+                    android:paddingLeft="@dimen/pad_xs"
+                    android:paddingTop="@dimen/pad_xs">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tax" />
+
+                    <TextView
+                        android:id="@+id/bill_tax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.1500" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs"
+                    android:paddingLeft="@dimen/pad_xs"
+                    android:paddingTop="@dimen/pad_xs">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Grand total" />
+
+                    <TextView
+                        android:id="@+id/bill_second_grandtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rs.1500" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bill_review_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerview_billreviewitem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mar_xs">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_anchorGravity="bottom|end"
+        fab:layout_anchor="@+id/nsv"
+        fab:menu_colorNormal="@color/black_de"
+        fab:menu_colorPressed="@color/black_de"
+        fab:menu_colorRipple="@color/white"
+        fab:menu_icon="@drawable/ic_more_vert_white">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_edit_customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:visibility="visible"
+            fab:fab_colorNormal="@color/black_de"
+            fab:fab_colorPressed="@color/black_de"
+            fab:fab_colorRipple="@color/white"
+            fab:fab_label="Edit Customer Detail"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_share_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_reply_all"
+            fab:fab_colorNormal="@color/black_de"
+            fab:fab_colorPressed="@color/black_de"
+            fab:fab_colorRipple="@color/white"
+            fab:fab_label="Reopen Bill"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_print_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_print"
+            fab:fab_colorNormal="@color/black_de"
+            fab:fab_colorPressed="@color/black_de"
+            fab:fab_colorRipple="@color/white"
+            fab:fab_label="Print Bill"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_review_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rate_review"
+            fab:fab_colorNormal="@color/black_de"
+            fab:fab_colorPressed="@color/black_de"
+            fab:fab_colorRipple="@color/white"
+            fab:fab_label="Review"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_save_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_save"
+            fab:fab_colorNormal="@color/black_de"
+            fab:fab_colorPressed="@color/black_de"
+            fab:fab_colorRipple="@color/white"
+            fab:fab_label="Save Review"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_backto_bill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_backspace"
+            fab:fab_colorNormal="@color/black_de"
+            fab:fab_colorPressed="@color/black_de"
+            fab:fab_colorRipple="@color/white"
+            fab:fab_label="Back "
+            fab:fab_size="mini" />
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/generate_bill_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mar_md"
+        android:src="@drawable/ic_assignment"
+        app:backgroundTint="@color/white"
+        app:fabSize="normal"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/selfie_bill_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mar_md"
+        android:src="@drawable/ic_action_camera"
+        android:visibility="gone"
+        app:backgroundTint="@color/white"
+        app:fabSize="normal"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end" />
+
+</android.support.design.widget.CoordinatorLayout>
