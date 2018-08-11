@@ -117,7 +117,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.Item
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         // init the item view's
-        TextView title;
+        TextView title, textView;
         SimpleDraweeView item_image;
         LinearLayout container;
         RecyclerView varient_recyclerview_item;
